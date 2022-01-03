@@ -293,4 +293,28 @@ section {
   .hero .content {
     padding: 6em 8em 6em 20em;
   }
+  .hero h1 {
+    width: 30rem;
+  }
+  .meet p,
+  .meet span {
+    font-size: 2rem;
+  }
+  .hero .hero-design {
+    padding-left: 1.5em;
+  }
+  .featured {
+    grid-template-columns: 60% auto;
+  }
+  .featured .subtitle,
+  .featured-desc {
+    font-size: 1.5em;
+  }
+  .featured-title {
+    font-size: 2em;
+  }
+  .featured img {
+    /* margin-left: 50%; */
+    width: 1000px;
+  }
 }
