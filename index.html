@@ -32,13 +32,13 @@
 
     <div class="hero">
       <div class="content">
-        <h1>Unique Web Experience by a Student</h1>
-        <div class="meet">
+        <h1 class="stagger1">Unique Web Experience by a Student</h1>
+        <div class="meet stagger1">
           <span>&#8595;</span>
           <p>Meet Malik Rawashdeh</p>
         </div>
         <svg
-          class="scroll"
+          class="scroll stagger1"
           width="68"
           height="112"
           viewBox="0 0 68 112"
@@ -114,10 +114,26 @@
         xmlns="http://www.w3.org/2000/svg"
       >
         <g filter="url(#filter0_d_4_136)">
-          <rect x="300" width="150" height="150" rx="28" fill="#6E00FF" />
+          <rect
+            class="square-anim"
+            x="300"
+            width="150"
+            height="150"
+            rx="28"
+            fill="#6E00FF"
+          />
         </g>
-        <rect x="300" y="300" width="150" height="150" rx="28" fill="#6E00FF" />
         <rect
+          class="square-anim"
+          x="300"
+          y="300"
+          width="150"
+          height="150"
+          rx="28"
+          fill="#6E00FF"
+        />
+        <rect
+          class="square-anim"
           x="450"
           y="150"
           width="150"
@@ -126,11 +142,34 @@
           fill="#6E00FF"
           fill-opacity="0.49"
         />
-        <rect x="150" y="150" width="150" height="150" rx="28" fill="white" />
-        <rect x="149" y="450" width="150" height="150" rx="28" fill="white" />
-        <rect y="304" width="150" height="150" rx="28" fill="#9444FD" />
-        <circle cx="374" cy="225" r="75" fill="#FF64CB" />
-        <circle cx="224" cy="377" r="75" fill="#5ED1D1" />
+        <rect
+          class="square-anim"
+          x="150"
+          y="150"
+          width="150"
+          height="150"
+          rx="28"
+          fill="white"
+        />
+        <rect
+          class="square-anim"
+          x="149"
+          y="450"
+          width="150"
+          height="150"
+          rx="28"
+          fill="white"
+        />
+        <rect
+          class="square-anim"
+          y="304"
+          width="150"
+          height="150"
+          rx="28"
+          fill="#9444FD"
+        />
+        <circle class="square-anim" cx="374" cy="225" r="75" fill="#FF64CB" />
+        <circle class="square-anim" cx="224" cy="377" r="75" fill="#5ED1D1" />
         <defs>
           <filter
             id="filter0_d_4_136"
@@ -252,5 +291,64 @@
         <a href="#"><img src="img/project-1.png" alt="Project 2" /></a>
       </div>
     </section>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"
+      integrity="sha512-H6cPm97FAsgIKmlBA4s774vqoN24V5gSQL4yBTDOY2su2DeXZVhQPxFK4P6GPdnZqM9fg1G3cMv5wD7e6cFLZQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"
+      integrity="sha512-5efjkDjhldlK+BrHauVYJpbjKrtNemLZksZWxd6Wdxvm06dceqWGLLNjZywOkvW7BF032ktHRMUOarbK9d60bg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      gsap.registerPlugin(ScrollTrigger);
+      var tl = gsap.timeline();
+      tl.from(".content", {
+        y: "-30%",
+        opacity: 0,
+        duration: 2,
+        ease: Power4.easeOut,
+      });
+      tl.from(
+        ".stagger1",
+        {
+          opacity: 0,
+          y: -50,
+          stagger: 0.3,
+          ease: Power4.easeOut,
+          duration: 2,
+        },
+        "-=1.5"
+      );
+      tl.from(
+        ".hero-design",
+        {
+          opacity: 0,
+          y: 50,
+          ease: Power4.easeOut,
+          duration: 1,
+        },
+        "-=2"
+      );
+      gsap.from(".square-anim", {
+        stagger: 0.2,
+        scale: 0.1,
+        duration: 1,
+        ease: Back.easeOut.config(1.7),
+      });
+      gsap.from(".transition2", {
+        scrollTrigger: {
+          trigger: ".transition2",
+          start: "top bottom",
+        },
+        y: 50,
+        opacity: 0,
+        duration: 1.2,
+        stagger: 0.3,
+      });
+    </script>
   </body>
 </html>
