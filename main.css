@@ -318,3 +318,17 @@ section {
     width: 1000px;
   }
 }
+
+.circle {
+  animation: circleAnim 1s infinite alternate-reverse;
+}
+
+@keyframes circleAnim {
+  from {
+    transform: translatey(0);
+    z-index: 5;
+  }
+  to {
+    transform: translatey(40px);
+  }
+}
